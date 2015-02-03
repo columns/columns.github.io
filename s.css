@@ -1,0 +1,42 @@
+body {
+	max-width:900px;
+	background-color: #006699;
+	margin:0 auto;
+	font: 16px "Times New Roman", Times, serif;
+}
+table {
+	font: 14px "Times New Roman", Times, serif;
+}
+h1, h2, h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+h1 {
+	font-size: 200%;
+}
+h2 {
+	font-size: 150%;
+}
+h3 {
+	font-size: 100%;
+}
+table {
+	border-collapse:collapse;
+	line-height:14px;
+}
+table, th, td {
+	border:1px black solid;
+}
+table th {
+	background:#33CC66;
+}
+a {
+	line-height:300%;
+	font-style:italic;
+}
+#allcontent {
+	background:#FFFFFF;
+	padding:0 5%;
+}
+.strongitem li {
+	font-weight:bold
+}

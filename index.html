@@ -1,7 +1,236 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="s.css" rel="stylesheet" type="text/css" />
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div id="allcontent">
+  <hr />
+  <h1>Instruction Set Architecture (ISA)</h1>
+  <p> An instruction set, or instruction set architecture (ISA), is the part of the computer architecture related to programming, including the native data types, instructions, registers, addressing modes, memory architecture, interrupt and exception handling, and external I/O.</p>
+  <h3>Instruction types</h3>
+  <ul>
+    <li>Data handling and memory operations</li>
+    <li>Arithmetic and logic operations </li>
+    <li>Control flow operations</li>
+  </ul>
+  <a href="http://en.wikipedia.org/wiki/Instruction_set">Instruction set on wikipedia</a>
+  <table>
+    <caption align="bottom" >
+    <strong>Table 1:</strong>Comparison of instruction set architectures
+    </caption>
+    <tr>
+      <th>ISA</th>
+      <th>Bits</th>
+      <th>Design</th>
+      <th>Reg#</th>
+      <th>Instruction encoding</th>
+      <th>Branch evaluation</th>
+      <th>Endian</th>
+      <th>Extensions</th>
+    </tr>
+    <tr>
+      <td>ARM</td>
+      <td>32</td>
+      <td>RISC</td>
+      <td>16<br /></td>
+      <td>Fixed (32-bit),Thumb: (16-bit), <br />
+        Thumb-2: (16 and 32-bit)</td>
+      <td>Condition code</td>
+      <td>Bi</td>
+      <td>NEON,Jazelle,VFP,<br />
+        TrustZone,LPAE</td>
+    </tr>
+    <tr>
+      <td>AVR</td>
+      <td>8</td>
+      <td>RISC</td>
+      <td>32,16<br /></td>
+      <td>Variable (mostly 16-bit, 4 instructions are 32-bit)</td>
+      <td>Condition register</td>
+      <td>Little</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MIPS</td>
+      <td>64</td>
+      <td>RISC</td>
+      <td>4-32 </td>
+      <td>Fixed (32-bit)</td>
+      <td>Condition register</td>
+      <td>Bi</td>
+      <td>MDMX,MIPS-3D</td>
+    </tr>
+    <tr>
+      <td>x86</td>
+      <td>32</td>
+      <td>CISC</td>
+      <td>8</td>
+      <td>Variable</td>
+      <td>Condition code</td>
+      <td>Little</td>
+      <td>MMX,3DNow!,SSE,PAE</td>
+    </tr>
+  </table>
+  <a href="http://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures">Comparison of instruction set architectures on wikipedia </a>
+  <hr />
+  <h1>Microarchitecture</h1>
+  <p>microarchitecture (sometimes abbreviated to μarch or uarch), also called computer organization, is the way a given instruction set architecture (ISA) is implemented on a processor.</p>
+  <h3>Microarchitectural concepts</h3>
+  <ul>
+    <li>Instruction cycle</li>
+    <li>Increasing execution speed</li>
+    <li>Instruction set choice</li>
+    <li>Instruction pipelining</li>
+    <li>Cache</li>
+    <li>Branch prediction</li>
+    <li>Superscalar</li>
+    <li>Out-of-order execution</li>
+    <li>Register renaming</li>
+    <li>Multiprocessing and multithreading</li>
+  </ul>
+  <img src="kr580vm80a.jpg" ></img> <a href="http://en.wikipedia.org/wiki/Microarchitecture">Microarchitecture on wikipedia</a>
+  <hr />
+  <p>Instruction set architecture is distinguished from the microarchitecture, which is the set of processor design techniques used to implement the instruction set. Computers with different microarchitectures can share a common instruction set. For example, the Intel Pentium and the AMD Athlon implement nearly identical versions of the x86 instruction set, but have radically different internal designs.</p>
+  <hr />
+  <h1>ARM</h1>
+  <p>TODO</p>
+  <a href="http://en.wikipedia.org/wiki/ARM_architecture">ARM architecture on wikipedia</a>
+  <table>
+    <caption align="bottom" >
+    <strong>Table 2:</strong>List of ARM microarchitectures
+    </caption>
+    <tr>
+      <th >Family</th>
+      <th >ISA</th>
+      <th >Core</th>
+      <th >Feature</th>
+      <th >Cache (I / D), MMU</th>
+    </tr>
+    <tr>
+      <td>ARM7TDMI</td>
+      <td>ARMv4T</td>
+      <td>ARM7TDMI(-S)</td>
+      <td>3-stage pipeline, Thumb, ARMv4 first to drop legacy ARM 26-bit addressing</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>ARM9E</td>
+      <td>ARMv5TEJ</td>
+      <td>ARM926EJ-S</td>
+      <td>Thumb, Jazelle DBX, Enhanced DSP instructions</td>
+      <td>Variable, TCMs, MMU</td>
+    </tr>
+    <tr>
+      <td>ARM11</td>
+      <td>ARMv6Z</td>
+      <td nowrap="nowrap">ARM1176JZ(F)-S</td>
+      <td>8-stage pipeline, SIMD, Thumb, Jazelle DBX, (VFP), Enhanced DSP instructions</td>
+      <td>Variable, MMU + TrustZone</td>
+    </tr>
+    <tr>
+      <td>Cortex-M</td>
+      <td>ARMv7-M</td>
+      <td>Cortex-M3</td>
+      <td>Microcontroller profile, Thumb / Thumb-2, hardware multiply and divide instructions, optional bit-banding memory</td>
+      <td>Optional cache, no TCM, optional MPU with 8 regions</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td nowrap="nowrap">ARMv7E-M</td>
+      <td>Cortex-M4</td>
+      <td>Microcontroller profile, Thumb / Thumb-2 / DSP / optional FPv4 single-precision FPU, hardware multiply and divide instructions, optional bit-banding memory</td>
+      <td>Optional cache, no TCM, optional MPU with 8 regions</td>
+    </tr>
+    <tr>
+      <td>Cortex-A</td>
+      <td>ARMv7-A</td>
+      <td>Cortex-A5</td>
+      <td>ARM / Thumb / Thumb-2 / DSP / SIMD / Optional VFPv4-D16 FPU / Optional NEON / Jazelle RCT and DBX, 1-4 cores / optional MPCore, snoop control unit (SCU), generic interrupt controller (GIC), accelerator coherence port (ACP)</td>
+      <td>4-64 KB / 4-64 KB L1, MMU + TrustZone</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Cortex-A9 MPCore</td>
+      <td>ARM / Thumb / Thumb-2 / DSP / Optional VFPv3 FPU / Optional NEON / Jazelle RCT and DBX, out-of-order speculative issuesuperscalar, 1-4 SMP cores, snoop control unit (SCU), generic interrupt controller (GIC), accelerator coherence port (ACP)</td>
+      <td>16-64 KB / 16-64 KB L1, 0-8 MB L2 opt parity, MMU + TrustZone</td>
+    </tr>
+    <tr>
+      <td>Cortex-A50</td>
+      <td>ARMv8-A</td>
+      <td>Cortex-A53</td>
+      <td>AArch32 and AArch64, 1-4 SMP cores, Trustzone, NEON advanced SIMD, VFPv4, hardware virtualization, dual issue, in-order pipeline</td>
+      <td>8-64 KB w/parity / 8-64 KB w/ECC L1 per core, 128 KB-2 MB L2 shared, 40-bit physical addresses</td>
+    </tr>
+    <tr>
+      <td>Snapdragon (Qualcomm)</td>
+      <td>ARMv7-A</td>
+      <td>Scorpion</td>
+      <td>1 or 2 cores. ARM / Thumb / Thumb-2 / DSP / SIMD / VFPv3 FPU / NEON (128-bit wide)</td>
+      <td>256 KB L2 per core</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Krait</td>
+      <td>1, 2, or 4 cores. ARM / Thumb / Thumb-2 / DSP / SIMD / VFPv4 FPU / NEON (128-bit wide)</td>
+      <td>4 KB / 4 KB L0, 16 KB / 16 KB L1, 512 KB L2 per core</td>
+    </tr>
+    <tr>
+      <td>Ax(Apple)</td>
+      <td>ARMv7-A</td>
+      <td>Swift</td>
+      <td>2 cores. ARM / Thumb / Thumb-2 / DSP / SIMD / VFPv4 FPU / NEON</td>
+      <td>L1: 32 KB / 32 KB, L2: 1 MB</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>ARMv8-A</td>
+      <td>Cyclone gen. 2</td>
+      <td>2 or 3 cores. ARM / Thumb / Thumb-2 / DSP / SIMD / VFPv4 FPU / NEON / TrustZone / AArch64</td>
+      <td>L1: 64 KB / 64 KB, L2: 1 or 2 MB, L3: 4 MB</td>
+    </tr>
+    <tr>
+      <td>Denver (Nvidia)</td>
+      <td>ARMv8-A</td>
+      <td>Denver</td>
+      <td>2 cores. AArch64, 7-wide superscalar, in-order, dynamic code optimization, 128 MB optimization cache</td>
+      <td>128 KB I / 64 KB D</td>
+    </tr>
+  </table>
+  <a href="http://en.wikipedia.org/wiki/List_of_ARM_microarchitectures">List of ARM microarchitectures on wikipedia</a>
+  <hr />
+  <h1>ARM Nomenclature</h1>
+  <strong>ARM{x}{y}{z}{T}{D}{M}{I}{E}{J}{F}{-S}</strong>
+  <ul class="strongitem">
+    <li>x---family</li>
+    <li>y---memory management/protection unit</li>
+    ARMx1z (e.g. ARM710T) indicates cache& full MMU
+    ARMx2z (e.g. ARM720T) indicates cache,MMU & Process ID support
+    ARMx3z (e.g. ARM1136J-S) indicates physically mapped caches and MMU
+    ARMx4z (e.g. ARM740T) indicates cache and MPU
+    ARMx5z (e.g. ARM1156T2-S) indicates cache, MPU and error correcting memory
+    ARMx6z (e.g. ARM966E-S) indicates write buffer but no caches
+    ARMx7z (e.g. ARM1176JZ-S) indicates AXI bus, & physically mapped caches and MMU
+    <li>z---cache</li>
+    ARMxy6 (e.g. ARM946E-S) indicates TCMs(Tightly-Coupled Memory)
+    <li>T---Thumb 16-bit decoder</li>
+    To improve compiled code-density, processors since the ARM7TDMI have featured Thumb instruction set, which have their own state. (The "T" in "TDMI" indicates the Thumb feature.) When in this state, the processor executes the Thumb instruction set, a compact 16-bit encoding for a subset of the ARM instruction set
+    <li>D---JTAG debug</li>
+    All modern ARM processors include hardware debugging facilities, allowing software debuggers to perform operations such as halting, stepping,and breakpointing of code starting from reset. These facilities are built using JTAG support,though some newer cores optionally support ARM's own two-wire "SWD" protocol
+    <li>M---fast multiplier</li>
+    <li>I---EmbeddedICE macrocell</li>
+    <li>E---enhanced instructions</li>
+    To improve the ARM architecture for digital signal processing and multimedia applications, DSP instructions were added to the set
+    <li>J---Jazelle</li>
+    Jazelle DBX (Direct Bytecode eXecution) is a technique that allows Java Bytecode to be executed directly in the ARM architecture as a third execution state (and instruction set) alongside the existing ARM and Thumb-mode
+    <li>F---vector floating-point unit</li>
+    VFP (Vector Floating Point) technology is an FPU coprocessor extension to the ARM architecture.
+    <li>S---synthesizible version</li>
+    the processor core is supplied as source code that can be compiled into a form easily used by EDA tools.
+  </ul>
+</div>
 </body>
 </html>
